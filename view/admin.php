@@ -19,6 +19,9 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/controller/userController.php");
 <?php 
 	if(!isset($_SESSION["user"]))
 	header("location: /index.php");
+
+	elseif($_SESSION["user"]->getRole() != "admin")
+	header("location: /view/panel.php");
 ?>
 	<!-- Main -->
 	<div class="container bootstrap snippet">
@@ -81,13 +84,13 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/controller/userController.php");
 								<small>Complete</small>
 								<div class="progress">
 									<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="complete">
-										<span class="sr-only">12% Complete</span>
+										<strong id="completeBar"></strong>
 									</div>
 								</div>
 								<small>Not complete</small>
 								<div class="progress">
 									<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%" id="notComplete">
-										<span class="sr-only">20% Complete</span>
+										<strong id="incompleteBar"></strong>
 									</div>
 								</div>
 

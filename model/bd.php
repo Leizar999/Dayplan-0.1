@@ -10,10 +10,10 @@
 		private static $instance;
 
 		private function __construct(){
-			$this->host = "yourhost";
-			$this->user = "youruser";
-			$this->pass = "yourpass";
-			$this->bbdd = "yourdatabase";
+			$this->host = "localhost";
+			$this->user = "manager";
+			$this->pass = "coffeetime";
+			$this->bbdd = "dayplan";
 			$this->conection = new mysqli($this->host, $this->user, $this->pass, $this->bbdd) or die("Problemas en la conection: " . mysqli_error($this->conection));
 			self::$instance = null;
 		}

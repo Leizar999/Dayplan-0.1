@@ -75,7 +75,7 @@ CREATE TABLE `users` (
 --
 DROP TABLE IF EXISTS `dayplan`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`manager`@`%` SQL SECURITY DEFINER VIEW `dayplan`  AS  select `dayplans`.`id` AS `id`,`users`.`login` AS `login`,`users`.`name` AS `name`,`users`.`surname` AS `surname`,`users`.`department` AS `department`,`dayplans`.`texteditor` AS `texteditor`,`dayplans`.`dateplan` AS `dateplan`,`users`.`email` AS `email`,`dayplans`.`comments` AS `comments` from (`users` join `dayplans`) where (`users`.`login` = `dayplans`.`login`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dayplan`  AS  select `dayplans`.`id` AS `id`,`users`.`login` AS `login`,`users`.`name` AS `name`,`users`.`surname` AS `surname`,`users`.`department` AS `department`,`dayplans`.`texteditor` AS `texteditor`,`dayplans`.`dateplan` AS `dateplan`,`users`.`email` AS `email`,`dayplans`.`comments` AS `comments` from (`users` join `dayplans`) where (`users`.`login` = `dayplans`.`login`) ;
 
 --
 -- Índices para tablas volcadas

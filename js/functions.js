@@ -293,6 +293,9 @@ $(document).ready(function(){
 
 			$("#complete").css("width", completed + "%");
 			$("#notComplete").css("width", nonCompleted + "%");
+
+			$("#completeBar").html(completed + "%");
+			$("#incompleteBar").html(nonCompleted + "%");
 	    }});
 
 		//Highlight left bar menus
