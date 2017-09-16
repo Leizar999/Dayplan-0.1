@@ -1,5 +1,5 @@
 <?php
-	
+
 	class DB {
 
 		private $host;
@@ -11,9 +11,9 @@
 
 		private function __construct(){
 			$this->host = "localhost";
-			$this->user = "manager";
-			$this->pass = "coffeetime";
-			$this->bbdd = "dayplan";
+			$this->user = "";
+			$this->pass = "";
+			$this->bbdd = "";
 			$this->conection = new mysqli($this->host, $this->user, $this->pass, $this->bbdd) or die("Problemas en la conection: " . mysqli_error($this->conection));
 			self::$instance = null;
 		}
@@ -57,7 +57,7 @@
 		}
 
 		/**
-		Escapa los caracteres especiales de una cadena para usarla en una sentencia SQL, 
+		Escapa los caracteres especiales de una cadena para usarla en una sentencia SQL,
 		tomando en cuenta el conjunto de caracteres actual de la conexión. Evita inyecciones
 		maliciosas de código.
 
